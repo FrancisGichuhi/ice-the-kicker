@@ -45,9 +45,14 @@ module.exports.calculateScore = function (player) {
       return calculateRushingScore(player) +
         calculateReceivingScore(player) +
         calculateReturnScore(player)
+    //case 'TE':
+      //return calculateReceivingScore(player)
+    //default:
+      //return 0
+  
     case 'TE':
       return calculateReceivingScore(player)
-    default:
-      return 0
-  }
-}
+     default:
+       throw new Error('Unknown player position (K)')
+   }
+     }
